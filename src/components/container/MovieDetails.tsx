@@ -10,7 +10,7 @@ type MovieProps = {
 const MovieDetail: React.FC<MovieProps> = ({ movie }) => {
   const { cover, name, desc, starring } = movie;
   return (
-    <section className="lg:max-w-8xl 2xl:max-w-9xl mx-auto w-full  flex gap-32 text-white mt-64 px-5">
+    <section className="lg:max-w-8xl 2xl:max-w-9xl mx-auto w-full flex flex-col lg:flex-row gap-20 xl:gap-32 text-white mt-36 lg:mt-48 xl:mt-64 px-5">
       <MovieCover cover={cover} name={name} />
       <MovieInfo name={name} desc={desc} starring={starring} />
     </section>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import SearchBar from "../base/SearchBar";
 
 const Header: React.FC = () => {
   const [showMobile, setShowMobile] = useState<Boolean>(false);
@@ -12,9 +13,7 @@ const Header: React.FC = () => {
         <span className="hidden lg:flex text-xl">
           <Link to="/">Browse all movies</Link>
         </span>
-        <button className="hidden lg:flex border rounded-full items-center justify-center px-5 py-4 cursor-pointer">
-          <i className="fa fa-search text-2xl"></i>
-        </button>
+        <SearchBar />
         <button
           className=" lg:hidden bg-primary flex items-center justify-center px-5 py-3 rounded-md cursor-pointer"
           onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
