@@ -11,16 +11,16 @@ const SearchPage: React.FC = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       const fetchedMovies = await fetchRandomMovies(10);
-      setMovieList(fetchedMovies);
+      // setMovieList(fetchedMovies);
     };
     fetchMovies();
   }, []);
 
   return (
     <main className="w-full flex flex-col overflow-hidden">
-      <div className="mt-64">
+      {/* <div className="mt-64">
         <MovieList movies={movieList} />
-      </div>
+      </div> */}
     </main>
   );
 };

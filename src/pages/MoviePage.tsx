@@ -9,7 +9,7 @@ const MoviePage: React.FC = () => {
 
   return (
     <main className="w-full flex flex-col gap-20 overflow-hidden">
-      {movie ? <MovieDetail movie={movie} /> : "No Movies"}
+      {/* {movie ? <MovieDetail movie={movie} /> : "No Movies"} */}
     </main>
   );
 };
