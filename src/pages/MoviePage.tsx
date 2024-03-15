@@ -8,20 +8,19 @@ import { fetchRandomMovies } from "../sdk/movieAPI";
 
 const MoviePage: React.FC = () => {
   const { id = "" } = useParams<{ id?: string }>();
-  const [movie, setMovie] = useState<IMovie>();
+  const [movie, setMovie] = useState<IMovie | null>(null);
 
-  useEffect(() => {
-    // const fetchMovies = async () => {
-    //   const fetchedMovies = await fetchRandomMovies(10);
-    // };
-    // fetchMovies();
-    // const selectedMovie = await fetchMovies.find((movie:IMovie) => movie.IMDB_ID === (id));
-    // setMovie(selectedMovie);
-  }, [id]);
+  // useEffect(() => {
+  //   const fetchMovies = async () => {
+  //     const fetchedMovies = await fetchRandomMovies(10);
+  //   };
+  //   fetchMovies();
+  //   // setMovie(selectedMovie);
+  // }, [id]);
 
   return (
     <main className="w-full flex flex-col gap-20 overflow-hidden">
-      {/* {movie && <MovieDetail movie={movie} />} */}
+      {/* {movie ? <MovieDetail movie={movie} /> : "No Movies"} */}
     </main>
   );
 };

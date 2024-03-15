@@ -9,7 +9,15 @@ export const fetchRandomMovies = async (quantity:number) => {
         const data = await response.data
 
         // map the data to a readable object
-        return data.description.map((item:any) => convertToObject(item));
+        const updatedMovieList =  data.description.map((item:any) => convertToObject(item));
+
+        if(updatedMovieList.length > 0){
+            console.log(updatedMovieList)
+            return updatedMovieList
+        } else {
+            return null
+        }
+
 
     } catch(error){
         console.log("Failed to fetch Movies", error)
