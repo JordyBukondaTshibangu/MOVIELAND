@@ -4,6 +4,6 @@ export interface IMovie {
     IMDB_ID: string;
     RANK: number;
     ACTORS: string;
-    IMG_POSTER: string | undefined;
+    IMG_POSTER: string;
   }
   

@@ -4,45 +4,26 @@ interface IMovie {
   IMDB_ID: string;
   RANK: number;
   ACTORS: string;
-  IMG_POSTER: string | undefined;
+  IMG_POSTER: string ;
 }
 
-export function convertToObject(obj: IMovie): IMovie {
-  const newObj: IMovie = {
-    TITLE: '',
-    YEAR: 0,
-    IMDB_ID: '',
-    RANK: 0,
-    ACTORS: '',
-    IMG_POSTER: undefined,
+export function convertToObject(obj: any): IMovie {
+  const mapping: Record<string, keyof IMovie> = {
+    "#TITLE": "TITLE",
+    "#YEAR": "YEAR",
+    "#IMDB_ID": "IMDB_ID",
+    "#RANK": "RANK",
+    "#ACTORS": "ACTORS",
+    "#IMG_POSTER": "IMG_POSTER"
   };
 
-  for (const key in obj) {
-    if (Object.prototype.hasOwnProperty.call(obj, key)) {
-      switch (key) {
-        case 'TITLE':
-          newObj.TITLE = obj.TITLE;
-          break;
-        case 'YEAR':
-          newObj.YEAR = obj.YEAR;
-          break;
-        case 'IMDB_ID':
-          newObj.IMDB_ID = obj.IMDB_ID;
-          break;
-        case 'RANK':
-          newObj.RANK = obj.RANK;
-          break;
-        case 'ACTORS':
-          newObj.ACTORS = obj.ACTORS;
-          break;
-        case 'IMG_POSTER':
-          newObj.IMG_POSTER = obj.IMG_POSTER;
-          break;
-        default:
-          break;
-      }
-    }
-  }
+  const newObj: Partial<IMovie> = {};
 
-  return newObj;
+  Object.entries(mapping).forEach(([inputKey, outputKey]) => {
+    if (obj[inputKey] !== undefined) {
+      newObj[outputKey] = obj[inputKey];
+    }
+  });
+
+  return newObj as IMovie;
 }
