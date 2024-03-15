@@ -12,3 +12,8 @@ export interface IMovie {
     date: string;
   }
 
+export interface IMoviePreview {
+  id: number;
+  name: string;
+  cover: string;
+}

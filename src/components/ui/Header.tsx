@@ -5,7 +5,7 @@ const Header: React.FC = () => {
   const [showMobile, setShowMobile] = useState<Boolean>(false);
   return (
     <header className="fixed z-50 h-[12vh] w-full py-5 bg-custom-gradient text-white">
-      <nav className="max-w-8xl mx-auto  h-full flex justify-between items-center px-5 ">
+      <nav className="max-w-8xl 2xl:max-w-9xl mx-auto  h-full flex justify-between items-center px-5 ">
         <div className="text-7xl text-primary font-bold">MovieLand</div>
         <span className="hidden lg:flex text-xl">
           <Link to="/">Browse all movies</Link>
