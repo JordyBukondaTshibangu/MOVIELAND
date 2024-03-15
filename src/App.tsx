@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import MovieDetails from "./pages/MovieDetails";
+import HomePage from "./pages/HomePage";
+import MovieDetails from "./pages/MovieDetailPage";
 import Header from "./components/ui/Header";
 import Footer from "./components/ui/Footer";
 
@@ -11,9 +11,8 @@ const App: React.FC = () => {
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/movie/:id" element={<MovieDetails />} />
-        <Route path="/" element={<Home />} />
       </Routes>
       <Footer />
     </Router>
