@@ -15,6 +15,7 @@
 
 body {
   margin: 0;
+  position: relative;
 }
 
 code {
@@ -58,6 +59,7 @@ body {
 }
 ol, ul {
 	list-style: none;
+    list-style-type: none;
 }
 blockquote, q {
 	quotes: none;
@@ -70,4 +72,12 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+a {
+    text-decoration: none;
+  }
+
+
+.flex-between {
+	@apply flex justify-between items-center
 }

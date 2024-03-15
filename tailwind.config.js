@@ -15,6 +15,9 @@ module.exports = {
       "2xl": "1536px",
       "3xl": "1990px",
     },
+    backgroundImage: {
+      'custom-gradient': 'linear-gradient(to right bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.9), rgba(0,0,0,0.6), rgba(0,0,0,0.5), rgba(0,0,0,0))',
+    },
     colors: {
       primary: "#FD7401",
       secondary: "#FF8755",
@@ -25,7 +28,6 @@ module.exports = {
       fontColor: "#BABABF",
       lightFontColor: "#555",
       light: "#F4F2EE",
-      // #
       dark: "#242535",
       darkHeader: "#181A2A",
       darkMirage: "#1b1c28",
@@ -40,9 +42,7 @@ module.exports = {
       arsenic: "#3B444B",
       coral: "#54626F",
     },
-    fontFamily: {
-      sans: ["Roboto", "Arial", "sans-serif"],
-    },
+
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
