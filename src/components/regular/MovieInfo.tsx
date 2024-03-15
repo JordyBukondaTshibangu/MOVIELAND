@@ -1,23 +1,17 @@
 import React from "react";
-import { IMovie } from "../../interfaces/movie";
 import Button from "../base/Button";
 
-type MoviePreviewProps = {
-  movie: IMovie;
+type MovieInfoProps = {
+  name: string;
+  desc: string;
+  starring: string;
 };
 
-const MoviePreview: React.FC<MoviePreviewProps> = ({
-  movie: { id, name, rating, desc, starring, cover },
-}) => {
+const MovieInfo: React.FC<MovieInfoProps> = ({ name, desc, starring }) => {
   return (
-    <div className="relative w-full h-screen bg-bgSuccess flex justify-center">
-      <div className="absolute min-h-full top-0 left-0 bottom-0 right-0 movie-preview-cover">
-        <img src={cover} alt={name} className="w-full h-full object-cover" />
-      </div>
-      <div className="absolute lg:max-w-8xl 2xl:max-w-9xl mx-auto w-full flex flex-col gap-8 z-40 px-5">
-        <h1 className="text-4xl lg:text-7xl font-bold uppercase mt-48 md:mt-56 lg:mt-64 2xl:mt-96">
-          {name}
-        </h1>
+    <div className=" w-full h-screen  flex justify-center">
+      <div className="w-full flex flex-col gap-8 z-40 px-5">
+        <h1 className="text-4xl lg:text-7xl font-bold uppercase">{name}</h1>
         <p className="text-lg lg:text-2xl font-medium leading-10 lg:w-3/5">
           {desc}
         </p>
@@ -36,10 +30,10 @@ const MoviePreview: React.FC<MoviePreviewProps> = ({
             <i className="fa fa-star text-xl text-rating"></i>
           </span>
         </div>
-        <Button link={`/movies/${id}`} text="View detail" icon="eye" />
+        <Button link={`/`} text="Return to home" icon="arrow-left" />
       </div>
     </div>
   );
 };
 
-export default MoviePreview;
+export default MovieInfo;

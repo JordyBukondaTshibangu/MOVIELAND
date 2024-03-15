@@ -19,7 +19,7 @@ const MovieHero: React.FC<MovieProps> = ({ movies }) => {
     pickRandomMovie();
 
     // Set up an interval to pick a new random movie every 10 seconds
-    const intervalId = setInterval(pickRandomMovie, 10000);
+    const intervalId = setInterval(pickRandomMovie, 5000);
 
     // Clean up the interval on component unmount
     return () => clearInterval(intervalId);

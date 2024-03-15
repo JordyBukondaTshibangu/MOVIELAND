@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IMoviePreview } from "../../interfaces/movie";
-import { Link } from "react-router-dom";
+import Button from "../base/Button";
 
 type MovieCardProps = {
   moviePreview: IMoviePreview;
@@ -38,12 +38,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
               <i className="fa fa-star text-lg text-rating"></i>
             </span>
           </div>
-          <Link
-            className="bg-primary w-full mx-auto px-5 py-2 flex items-center justify-center text-lg"
-            to={`/movies/${id}`}
-          >
-            <i className="fa fa-eye mx-2"></i> View Movie Detail
-          </Link>
+          <Button link={`/movies/${id}`} text="View detail" icon="eye" />
         </div>
       )}
     </div>
