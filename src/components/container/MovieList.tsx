@@ -1,9 +1,9 @@
 import React from "react";
-import { IMoviePreview } from "../../interfaces/movie";
+import { IMovie } from "../../interfaces/movie";
 import MovieCard from "../regular/MovieCard";
 
 type MovieListProps = {
-  movies: IMoviePreview[];
+  movies: IMovie[];
 };
 const MovieList: React.FC<MovieListProps> = ({ movies }) => {
   return (
