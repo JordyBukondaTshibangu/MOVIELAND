@@ -14,7 +14,8 @@ const MoviePreview: React.FC<MoviePreviewProps> = ({
       <div className="absolute min-h-full top-0 left-0 bottom-0 right-0 movie-preview-cover">
         <img src={cover} alt={name} className="w-full h-full object-cover" />
       </div>
-      <div className="absolute max-w-8xl w-full mx-auto flex flex-col gap-8 z-40">
+      (
+      <div className="absolute max-w-8xl 2xl:max-w-9xl mx-auto w-full flex flex-col gap-8 z-40">
         <h1 className="text-7xl font-bold uppercase mt-96">{name}</h1>
         <p className="text-2xl font-medium leading-10 w-3/5">{desc}</p>
         <div className="flex gap-4 items-center">
@@ -37,6 +38,7 @@ const MoviePreview: React.FC<MoviePreviewProps> = ({
           <i className="fa fa-eye mx-2"></i> View Movie Detail
         </Link>
       </div>
+      )
     </div>
   );
 };

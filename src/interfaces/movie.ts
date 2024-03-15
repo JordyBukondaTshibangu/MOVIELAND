@@ -16,4 +16,6 @@ export interface IMoviePreview {
   id: number;
   name: string;
   cover: string;
+  rating: number;
+  starring: string;
 }
