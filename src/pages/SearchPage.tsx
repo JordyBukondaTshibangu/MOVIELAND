@@ -1,7 +1,8 @@
 import React from "react";
 import { upcome } from "../data";
 import MovieList from "../components/container/MovieList";
-const SearchPage = () => {
+
+const SearchPage: React.FC = () => {
   return (
     <main className="w-full flex flex-col overflow-hidden">
       <div className="mt-64">

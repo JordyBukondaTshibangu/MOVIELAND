@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import MovieDetail from "../components/container/MovieDetails";
 import { IMovie } from "../interfaces/movie";
 
-const MoviePage = () => {
+const MoviePage: React.FC = () => {
   const { id = "" } = useParams<{ id?: string }>();
   const [movie, setMovie] = useState<IMovie>();
 
