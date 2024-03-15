@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const Header: React.FC = () => {
   const [showMobile, setShowMobile] = useState<Boolean>(false);
   return (
-    <header className="sticky z-10 h-[11vh] w-full py-5 bg-custom-gradient text-white">
-      <nav className="max-w-9xl mx-auto  h-full flex justify-between items-center px-5 lg:px-10">
-        <div className="text-5xl text-primary font-bold">MovieLand</div>
+    <header className="fixed z-50 h-[12vh] w-full py-5 bg-custom-gradient text-white">
+      <nav className="max-w-8xl mx-auto  h-full flex justify-between items-center px-5 ">
+        <div className="text-7xl text-primary font-bold">MovieLand</div>
         <span className="hidden lg:flex text-xl">
           <Link to="/">Browse all movies</Link>
         </span>

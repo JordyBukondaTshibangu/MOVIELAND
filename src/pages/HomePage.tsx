@@ -8,7 +8,7 @@ const HomePage = () => {
 
   console.log(movies);
   return (
-    <main>
+    <main className="w-full">
       <MovieHero movies={movies} />
     </main>
   );

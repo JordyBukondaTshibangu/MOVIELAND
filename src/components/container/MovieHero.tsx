@@ -7,7 +7,7 @@ type MovieProps = {
 };
 const MovieHero: React.FC<MovieProps> = ({ movies }) => {
   return (
-    <section>
+    <section className="relative w-full h-screen text-white">
       {movies.map((movie, index: number) => (
         <MoviePreview key={index} movie={movie} />
       ))}

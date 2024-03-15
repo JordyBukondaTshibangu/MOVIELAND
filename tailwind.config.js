@@ -16,7 +16,7 @@ module.exports = {
       "3xl": "1990px",
     },
     backgroundImage: {
-      'custom-gradient': 'linear-gradient(to right bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.9), rgba(0,0,0,0.6), rgba(0,0,0,0.5), rgba(0,0,0,0))',
+      'custom-gradient': 'linear-gradient(to right bottom, rgba(0,0,0,9), rgba(0,0,0,9), rgba(0,0,0,0.8), rgba(0,0,0,0.7), rgba(0,0,0,0.6))',
     },
     colors: {
       primary: "#FD7401",
@@ -24,6 +24,7 @@ module.exports = {
       success: "#0BA02C",
       bgSuccess: "#00B83E",
       danger: "#dc3545",
+      rating : '#ffd300',
       info: "#738AFF",
       fontColor: "#BABABF",
       lightFontColor: "#555",
