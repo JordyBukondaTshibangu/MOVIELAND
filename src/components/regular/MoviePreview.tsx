@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 type MoviePreviewProps = {
   movie: IMovie;
 };
+
 const MoviePreview: React.FC<MoviePreviewProps> = ({
   movie: { id, name, rating, desc, starring, cover },
 }) => {
