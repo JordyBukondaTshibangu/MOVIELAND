@@ -1,7 +1,6 @@
-import { createSlice, createAsyncThunk, PayloadAction, createSelector } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { fetchRandomMovies } from "../../../sdk/movieAPI";
 import { IMovie } from "../../../interfaces/movie";
-import { RootState } from "../../store";
 
 
 type MovieState = {

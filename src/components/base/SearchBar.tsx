@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import {
+  clearSearchTerm,
+  setSearchTerm,
+} from "../../store/slices/movie/searchSlice";
 
 type SearchBarProp = {
   handleExitSearch: () => void;
@@ -10,7 +14,12 @@ const SearchBar: React.FC<SearchBarProp> = ({ handleExitSearch }) => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
-    // dispatch()
+    dispatch(setSearchTerm(event.target.value));
+  };
+
+  const handleClearSearch = () => {
+    dispatch(clearSearchTerm());
+    handleExitSearch();
   };
   return (
     <div className="relative flex items-center justify-center gap-3 w-[500px]">
@@ -25,7 +34,7 @@ const SearchBar: React.FC<SearchBarProp> = ({ handleExitSearch }) => {
       />
       <button
         className="hidden lg:flex border rounded-full items-center justify-center px-4 py-3 cursor-pointer hover:bg-primary hover:border-primary transition duration-300"
-        onClick={handleExitSearch}
+        onClick={() => handleClearSearch()}
       >
         <i className="fa fa-times text-xl"></i>
       </button>
