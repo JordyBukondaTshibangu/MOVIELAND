@@ -1,6 +1,7 @@
-import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction, createSelector } from "@reduxjs/toolkit";
 import { fetchRandomMovies } from "../../sdk/movieAPI";
 import { IMovie } from "../../interfaces/movie";
+import { RootState } from "../store";
 
 
 type MovieState = {
@@ -22,18 +23,10 @@ export const fetchMovies = createAsyncThunk<IMovie[], number>('movies/fetchRando
     return response;
 })
 
-/*
-If there was an API call to fetch a single Movie
+export const selectedMovieById = createSelector(
+    [(state: RootState, movieId: string) => state.movies.items.find((movie) => movie.IMDB_ID === movieId)],
+    (movie) => movie)
 
-export const fetchMovie = createAsyncThunk<IMovie, string>('movies/fetchById', async (movieId, { rejectWithValue }) => {
-    try {
-      const response = await fetchMovieById(movieId);
-      return response;
-    } catch (error) {
-      return rejectWithValue('Failed to fetch movie');
-    }
-  });
-  */
 
 const movieSlice = createSlice({
     name : 'movies',
@@ -51,7 +44,30 @@ const movieSlice = createSlice({
             state.status = 'failed';
             state.error = 'An error occurred'
         })
-              // Handling fetchMovie async thunk
+
+    }
+
+})
+
+export default movieSlice.reducer
+
+
+
+
+/*
+If there was an API call to fetch a single Movie
+
+export const fetchMovie = createAsyncThunk<IMovie, string>('movies/fetchById', async (movieId, { rejectWithValue }) => {
+    try {
+      const response = await fetchMovieById(movieId);
+      return response;
+    } catch (error) {
+      return rejectWithValue('Failed to fetch movie');
+    }
+  });
+  */
+
+                // Handling fetchMovie async thunk
     //   .addCase(fetchMovie.pending, (state) => {
     //    state.status = 'loading'
     //   })
@@ -63,8 +79,3 @@ const movieSlice = createSlice({
     //     // Optionally, handle an error in fetching a single movie
     //     state.error = action.payload as string;
     //   });
-    }
-
-})
-
-export default movieSlice.reducer
