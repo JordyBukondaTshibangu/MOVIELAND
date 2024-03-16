@@ -22,7 +22,7 @@ const SearchBar: React.FC<SearchBarProp> = ({ handleExitSearch }) => {
     handleExitSearch();
   };
   return (
-    <div className="relative flex items-center justify-center gap-3 w-[500px]">
+    <div className="relative flex items-center justify-center gap-3 lg:w-[500px]">
       <input
         type="text"
         name="search"
@@ -33,7 +33,7 @@ const SearchBar: React.FC<SearchBarProp> = ({ handleExitSearch }) => {
         onChange={handleChange}
       />
       <button
-        className="hidden lg:flex border rounded-full items-center justify-center px-4 py-3 cursor-pointer hover:bg-primary hover:border-primary transition duration-300"
+        className="flex border rounded-full items-center justify-center px-4 py-3 cursor-pointer bg-primary lg:bg-black text-white border-none lg:border-white hover:bg-primary hover:border-primary transition duration-300"
         onClick={() => handleClearSearch()}
       >
         <i className="fa fa-times text-xl"></i>
