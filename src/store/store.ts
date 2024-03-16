@@ -1,12 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
 import movieReducer from './slices/movie/movieSlice';
-import search from './slices/movie/searchSlice'
+import searchReducer from './slices/movie/searchSlice'
+import errorReducer from "./slices/error/errorSlice";
+import { buildGetDefaultMiddleware } from "@reduxjs/toolkit/dist/getDefaultMiddleware";
+import { errorMiddleware } from "./middleware/errorMiddleware";
 
  const store = configureStore({
     reducer : {
         movies : movieReducer,
-        search : search
-    }
+        search : searchReducer,
+        error : errorReducer
+    },
+    middleware : (buildGetDefaultMiddleware) => buildGetDefaultMiddleware().concat(errorMiddleware)
 })
 
 export type RootState = ReturnType<typeof store.getState>

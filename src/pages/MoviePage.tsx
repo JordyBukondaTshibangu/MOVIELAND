@@ -12,7 +12,11 @@ const MoviePage: React.FC = () => {
   );
 
   if (!movie) {
-    return <div>Movie not found.</div>;
+    return (
+      <main className="w-full min-h-[70vh] flex items-center justify-center overflow-hidden py-48 ">
+        <h3 className="text-4xl text-white">Movie not found...</h3>
+      </main>
+    );
   }
   return (
     <main className="w-full flex flex-col gap-20 overflow-hidden">

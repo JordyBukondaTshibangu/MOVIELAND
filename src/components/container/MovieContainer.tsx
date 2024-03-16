@@ -24,7 +24,7 @@ const MovieContainer: React.FC<MovieContainerProps> = ({ isHome }) => {
   }, [dispatch, status]);
 
   if (status === "loading") {
-    return <MoviesListLoader />;
+    return <MoviesListLoader isHome={isHome} />;
   }
 
   if (status === "failed") {

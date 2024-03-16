@@ -1,8 +1,9 @@
-// import ErrorImg from "../../../public/images/error.svg";
 import { Link } from "react-router-dom";
 import ErrorImage from "../../assets/error.svg";
+// import { useGlobalError } from "../../context/ErrorContext";
 
 export default function Error() {
+  // const { error } = useGlobalError;
   return (
     <div className="bg-cover bg-no-repeat rounded-xl flex flex-col items-center justify-center gap-5 md:gap-10 p-5  pt-48 lg:pt-20">
       <div className="flex  bg-light  dark:bg-darkHeader p-20 rounded-xl">
@@ -40,6 +41,7 @@ export default function Error() {
           </div>
         </div>
       </div>
+      {/* <button onClick={handleErrorClear}></button> */}
     </div>
   );
 }
