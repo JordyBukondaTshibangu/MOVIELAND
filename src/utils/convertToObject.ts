@@ -1,11 +1,4 @@
-interface IMovie {
-  TITLE: string;
-  YEAR: number;
-  IMDB_ID: string;
-  RANK: number;
-  ACTORS: string;
-  IMG_POSTER: string ;
-}
+import { IMovie } from "../interfaces/movie";
 
 export function convertToObject(obj: any): IMovie {
   const mapping: Record<string, keyof IMovie> = {

@@ -53,8 +53,12 @@ const Header: React.FC = () => {
               <i className="fa fa-times text-xl"></i>
             </button>
             <ul>
-              <li onClick={() => setShowMobile(false)}>
+              <li
+                className="flex gap-5 hover:bg-primary py-3 rounded-md px-5 text-xl transition duration-500 cursor-pointer"
+                onClick={() => setShowMobile(false)}
+              >
                 <Link to="/search">Search for movie</Link>
+                <i className="fa fa-search"></i>
               </li>
             </ul>
           </div>

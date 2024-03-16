@@ -26,9 +26,15 @@ const MovieList: React.FC<MovieListProps> = ({ movies, isHome }) => {
           Movies list
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5">
-          {movies.map((movie, index) => (
-            <MovieCard key={index} moviePreview={movie} />
-          ))}
+          {movies.length > 0 ? (
+            movies.map((movie, index) => (
+              <MovieCard key={index} moviePreview={movie} />
+            ))
+          ) : (
+            <h3 className="text-lg lg:text-2xl text-white font-medium">
+              No movies found...
+            </h3>
+          )}
         </div>
       </div>
     );
@@ -42,9 +48,15 @@ const MovieList: React.FC<MovieListProps> = ({ movies, isHome }) => {
           <SearchBar handleExitSearch={handleNavigateToHome} />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5">
-          {filteredMovies.map((movie, index) => (
-            <MovieCard key={index} moviePreview={movie} />
-          ))}
+          {filteredMovies.length > 0 ? (
+            filteredMovies.map((movie, index) => (
+              <MovieCard key={index} moviePreview={movie} />
+            ))
+          ) : (
+            <h3 className="text-lg lg:text-2xl text-white font-medium">
+              No movies found...
+            </h3>
+          )}
         </div>
       </div>
     );

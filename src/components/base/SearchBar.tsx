@@ -22,12 +22,12 @@ const SearchBar: React.FC<SearchBarProp> = ({ handleExitSearch }) => {
     handleExitSearch();
   };
   return (
-    <div className="relative flex items-center justify-center gap-3 lg:w-[500px]">
+    <div className="relative flex items-center justify-center gap-3 w-full lg:w-[500px]">
       <input
         type="text"
         name="search"
         id="search-bar"
-        className=" bg-white w-80 h-12 transition duration-700 ease-linear px-5 text-black rounded-md"
+        className=" bg-white w-full lg:w-80 h-12 transition duration-700 ease-linear px-5 text-black rounded-md"
         placeholder="Search title, keyword..."
         value={search}
         onChange={handleChange}

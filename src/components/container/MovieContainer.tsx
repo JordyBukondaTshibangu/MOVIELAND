@@ -4,6 +4,8 @@ import { AppDispatch, RootState } from "../../store/store";
 import MovieHero from "./MovieHero";
 import MovieList from "./MovieList";
 import { fetchMovies } from "../../store/slices/movie/movieSlice";
+import MoviesListLoader from "../feedback/MoviesListLoader";
+import Error from "../feedback/Error";
 
 type MovieContainerProps = {
   isHome: boolean;
@@ -22,11 +24,11 @@ const MovieContainer: React.FC<MovieContainerProps> = ({ isHome }) => {
   }, [dispatch, status]);
 
   if (status === "loading") {
-    return <div>Loading...</div>;
+    return <MoviesListLoader />;
   }
 
   if (status === "failed") {
-    return <div>Error: {error}</div>; // Display error message if an error occurred
+    return <Error />;
   }
 
   return (
