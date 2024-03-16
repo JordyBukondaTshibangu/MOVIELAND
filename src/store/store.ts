@@ -2,8 +2,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import movieReducer from './slices/movie/movieSlice';
 import searchReducer from './slices/movie/searchSlice'
 import errorReducer from "./slices/error/errorSlice";
-import { buildGetDefaultMiddleware } from "@reduxjs/toolkit/dist/getDefaultMiddleware";
 import { errorMiddleware } from "./middleware/errorMiddleware";
+// import { buildGetDefaultMiddleware } from "@reduxjs/toolkit/dist/getDefaultMiddleware";
 
  const store = configureStore({
     reducer : {
