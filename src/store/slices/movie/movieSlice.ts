@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction, createSelector } from "@reduxjs/toolkit";
-import { fetchRandomMovies } from "../../sdk/movieAPI";
-import { IMovie } from "../../interfaces/movie";
-import { RootState } from "../store";
+import { fetchRandomMovies } from "../../../sdk/movieAPI";
+import { IMovie } from "../../../interfaces/movie";
+import { RootState } from "../../store";
 
 
 type MovieState = {
@@ -22,10 +22,6 @@ export const fetchMovies = createAsyncThunk<IMovie[], number>('movies/fetchRando
     const response = await fetchRandomMovies(quantity);
     return response;
 })
-
-export const selectedMovieById = createSelector(
-    [(state: RootState, movieId: string) => state.movies.items.find((movie) => movie.IMDB_ID === movieId)],
-    (movie) => movie)
 
 
 const movieSlice = createSlice({

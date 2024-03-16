@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../../store/store";
 import MovieHero from "./MovieHero";
 import MovieList from "./MovieList";
-import { fetchMovies } from "../../store/slices/movieSlice";
+import { fetchMovies } from "../../store/slices/movie/movieSlice";
 
 type MovieContainerProps = {
   isHome: boolean;

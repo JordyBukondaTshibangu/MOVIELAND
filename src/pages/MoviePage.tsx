@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import MovieDetail from "../components/container/MovieDetails";
 import { useSelector } from "react-redux";
-import { selectedMovieById } from "../store/slices/movieSlice";
+import { selectedMovieById } from "../store/selectors/movie/movieSelector";
 import { RootState } from "../store/store"; // Import your RootState
 
 const MoviePage: React.FC = () => {
