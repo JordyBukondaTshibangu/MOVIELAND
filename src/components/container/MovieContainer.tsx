@@ -15,7 +15,6 @@ const MovieContainer: React.FC<MovieContainerProps> = ({ isHome }) => {
   const dispatch = useDispatch<AppDispatch>();
   const movies = useSelector((state: RootState) => state.movies.items);
   const status = useSelector((state: RootState) => state.movies.status);
-  // const error = useSelector((state: RootState) => state.movies.error);
 
   useEffect(() => {
     if (status === "loading") {
