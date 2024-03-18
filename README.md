@@ -32,10 +32,12 @@ Below are the links to help you install it:
 
 Launch
 
-* git clone (git@github.com:JordyBukondaTshibangu/MovieLand.git)
+* copy this command into your command git clone (git@github.com:JordyBukondaTshibangu/MovieLand.git)
 * cd MovieLand
 * npm install 
-* npm run start
+* npm run start (Will run in the browser and in elctron conccurently)
+* npm run dev (If you would like to run the app in the Browser )
+* npm run elctron (If you would like the app to run in electron only )
 
 
 
