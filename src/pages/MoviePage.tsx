@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "../store/hooks";
 import { RootState } from "../store/store";
-import { fetchMovie } from "../store/slices/movie/movieSlice";
+import { fetchMovie, fetchMovies } from "../store/slices/movie/movieSlice";
 import MovieDetail from "../components/container/MovieDetails";
 import MovieListLoader from "../components/feedback/MovieLoader";
 import Error from "../components/feedback/Error";
@@ -21,6 +21,8 @@ const MoviePage: React.FC = () => {
     if (movieId) {
       dispatch(fetchMovie(movieId));
     }
+
+    dispatch(fetchMovies(10));
   }, [dispatch, movieId]);
 
   if (status === "loading") {
