@@ -24,6 +24,46 @@ export const fetchRandomMovies = async (quantity: number): Promise<IMovie[]> => 
   } catch (error) {
     const axiosError = error as AxiosError;
     console.log("Failed to fetch Movies", axiosError.message);
-    throw axiosError; // Rethrow the error for further handling
+    throw axiosError; 
   }
 };
+
+export const fetchMovieById = async (id: string): Promise<IMovie | null> => {
+  try {
+    const response = await axios.get(`${API_ENDPOINT}/?`, {
+      params: { tt: id },
+    });
+    const data = response.data;
+
+    const movie = convertToObject(data.fake);
+
+      return movie
+
+  } catch (error) {
+    const axiosError = error as AxiosError;
+    console.log("Failed to fetch Movies", axiosError.message);
+    throw axiosError; 
+  }
+};
+
+
+export const searchMovie = async (search:string):Promise<IMovie | null> => {
+  try {
+    const response = await axios.get(`${API_ENDPOINT}/?`, {
+      params: { q: search },
+    });
+    const data = response.data;
+    
+    if(data.ok){
+      const movie = convertToObject(data);
+      return movie
+    } 
+
+    return null
+
+  } catch(error){
+    const axiosError = error as AxiosError;
+    console.log("Failed to search movie", axiosError.message);
+    throw axiosError; 
+  }
+}
