@@ -52,5 +52,15 @@ APP STRUCTURE AND KEY POINTS 🗂
 - [x] SDK ==> (Interface server) -- src/SDK  (Check the instruction.md to read more about the SDK)
 - [x] APP ==> (frontend interface and Routing) -- src/app
 	
+Launch 🚀
+
+1. CLONE REPO : git clone git@github.com:JordyBukondaTshibangu/MovieLand.git
+2. NAVIGATE TO THE PROJECT DIRECTORY : cd MovieLand
+3. INSTALL DEPENDENCIES : npm install
+4. LAUNCH THE APP IN THE BROWSER : npm run dev
+5. RUN THE APP CONCURRENTLY IN BOTH BROWSER AND ELECTRON : npm run start
+6. TO RUN ELECTRON SEPARATELY, ENSURE localhost:3000 IS RUNNING 
+
+
 
 
