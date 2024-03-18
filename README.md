@@ -37,7 +37,8 @@ Launch
 * npm install 
 * npm run start (Will run in the browser and in elctron conccurently)
 * npm run dev (If you would like to run the app in the Browser )
-* npm run elctron (If you would like the app to run in electron only )
+* npm run elctron-start (If you would like the app to run in electron only ) and copy this command 
+node_modules/electron/dist/Electron.app/Contents/MacOS/Electron main.js
 
 
 
