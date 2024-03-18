@@ -1,13 +1,14 @@
 import React from "react";
 import { IMovie } from "../../interfaces/movie";
 import Button from "../base/Button";
+import MovieDetailSpec from "../base/MovieDetailSpec";
 
 type MoviePreviewProps = {
   movie: IMovie;
 };
 
 const MoviePreview: React.FC<MoviePreviewProps> = ({
-  movie: { IMG_POSTER, TITLE, IMDB_ID, ACTORS },
+  movie: { IMG_POSTER, TITLE, IMDB_ID, ACTORS, RANK },
 }) => {
   return (
     <div className="relative w-full h-screen bg-bgSuccess flex justify-center">
@@ -23,17 +24,11 @@ const MoviePreview: React.FC<MoviePreviewProps> = ({
           {TITLE}
         </h1>
         <p className="text-lg lg:text-2xl font-medium leading-10 lg:w-3/5">
-          {/* {desc} */}
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore
-          recusandae repellat, repellendus consequuntur tempore ea aliquam eum
-          corrupti facere dolorem?
+          recusandae repellat.
         </p>
-        <div className="flex flex-col lg:flex-row  gap-4 lg:items-center">
-          <span className="text-primary font-bold text-md lg:text-2xl">
-            Starring:
-          </span>
-          <span className="font-bold text-md lg:text-2xl ">{ACTORS}</span>
-        </div>
+        <MovieDetailSpec name="Starring" value={ACTORS} />
+        <MovieDetailSpec name="Ranking" value={RANK} />
         <div className="flex items-center gap-4">
           <span className="flex items-center gap-2">
             <i className="fa fa-star text-xl text-rating"></i>
@@ -43,7 +38,9 @@ const MoviePreview: React.FC<MoviePreviewProps> = ({
             <i className="fa fa-star text-xl text-rating"></i>
           </span>
         </div>
-        <Button link={`/movies/${IMDB_ID}`} text="View detail" icon="eye" />
+        <div className="lg:mb-5">
+          <Button link={`/movies/${IMDB_ID}`} text="View detail" icon="eye" />
+        </div>
       </div>
     </div>
   );
