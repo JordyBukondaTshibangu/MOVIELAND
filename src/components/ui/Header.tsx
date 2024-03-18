@@ -8,11 +8,13 @@ const Header: React.FC = () => {
 
   const navigate = useNavigate();
 
+  // Navigate to search page
   const handleNavigateToSearch = () => {
     setShowSearchBar(true);
     navigate("/search");
   };
 
+  // Navigate to home page
   const handleNavigateToHome = () => {
     setShowSearchBar(false);
     navigate("/");
@@ -35,34 +37,40 @@ const Header: React.FC = () => {
             <i className="fa fa-search text-xl"></i>
           </button>
         )}
-        {showSearch && (
-          <SearchBar handleExitSearch={() => handleNavigateToHome()} />
-        )}
+        {
+          // Render search bar only on Mobile and Tablet
+          showSearch && (
+            <SearchBar handleExitSearch={() => handleNavigateToHome()} />
+          )
+        }
         <button
           className=" lg:hidden bg-primary flex items-center justify-center px-5 py-3 rounded-md cursor-pointer"
           onClick={() => setShowMobile(true)}
         >
           <i className="fa fa-bars text-2xl"></i>
         </button>
-        {showMobile && (
-          <div className="absolute top-0 right-0 bottom-0 left-0 z-20 bg-black min-h-[100vh] py-10 px-5 flex flex-col gap-20">
-            <button
-              className="flex items-center justify-center rounded-full p-5 border border-white  w-5 h-5 self-end"
-              onClick={() => setShowMobile(false)}
-            >
-              <i className="fa fa-times text-xl"></i>
-            </button>
-            <ul>
-              <li
-                className="flex gap-5 hover:bg-primary py-3 rounded-md px-5 text-xl transition duration-500 cursor-pointer"
+        {
+          // Mobile && Tablet view
+          showMobile && (
+            <div className="absolute top-0 right-0 bottom-0 left-0 z-20 bg-black min-h-[100vh] py-10 px-5 flex flex-col gap-20">
+              <button
+                className="flex items-center justify-center rounded-full p-5 border border-white  w-5 h-5 self-end"
                 onClick={() => setShowMobile(false)}
               >
-                <Link to="/search">Search for movie</Link>
-                <i className="fa fa-search"></i>
-              </li>
-            </ul>
-          </div>
-        )}
+                <i className="fa fa-times text-xl"></i>
+              </button>
+              <ul>
+                <li
+                  className="flex gap-5 hover:bg-primary py-3 rounded-md px-5 text-xl transition duration-500 cursor-pointer"
+                  onClick={() => setShowMobile(false)}
+                >
+                  <Link to="/search">Search for movie</Link>
+                  <i className="fa fa-search"></i>
+                </li>
+              </ul>
+            </div>
+          )
+        }
       </nav>
     </header>
   );

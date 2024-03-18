@@ -13,6 +13,8 @@ interface ErrorContextType {
   handleErrorClear: () => void;
 }
 
+// Create a Error Context Provider to handle Error Globally
+
 const ErrorContext = createContext<ErrorContextType | undefined>(undefined);
 
 export const ErrorProvider: React.FC<{ children: ReactNode }> = ({

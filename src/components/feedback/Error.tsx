@@ -3,6 +3,7 @@ import ErrorImage from "../../assets/error.svg";
 // import { useGlobalError } from "../../context/ErrorContext";
 
 export default function Error() {
+  // TODO : Fix usage the error globally
   // const { error } = useGlobalError;
   return (
     <div className="bg-cover bg-no-repeat rounded-xl flex flex-col items-center justify-center gap-5 md:gap-10 p-5  pt-48 lg:pt-20">

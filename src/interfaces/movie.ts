@@ -1,3 +1,5 @@
+// Movie interface globally used 
+
 export interface IMovie {
     TITLE: string;
     YEAR: number;

@@ -1,5 +1,4 @@
 // // Function to pick a random Movie from the Movie array list
-
 import { IMovie } from "../interfaces/movie";
 
 export default function randomMoviePicker(array: IMovie[]) {

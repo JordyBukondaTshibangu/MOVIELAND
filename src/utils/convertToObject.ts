@@ -1,5 +1,7 @@
 import { IMovie } from "../interfaces/movie";
 
+// Convert the data from the API into readable JS object
+
 export function convertToObject(obj: any): IMovie {
   const mapping: Record<string, keyof IMovie> = {
     "#TITLE": "TITLE",

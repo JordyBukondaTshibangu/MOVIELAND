@@ -18,6 +18,7 @@ const MovieContainer: React.FC<MovieContainerProps> = ({ isHome }) => {
 
   useEffect(() => {
     if (status === "loading") {
+      // fetch the movies from redux
       dispatch(fetchMovies(10));
     }
   }, [dispatch, status]);
@@ -32,7 +33,10 @@ const MovieContainer: React.FC<MovieContainerProps> = ({ isHome }) => {
 
   return (
     <main className="w-full flex flex-col gap-20 overflow-hidden">
-      {isHome && movies.length > 0 && <MovieHero movies={movies} />}
+      {
+        // Only render the Hero when on landing page
+        isHome && movies.length > 0 && <MovieHero movies={movies} />
+      }
       {movies.length > 0 && <MovieList movies={movies} isHome={isHome} />}
     </main>
   );

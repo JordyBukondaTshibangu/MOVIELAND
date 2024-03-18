@@ -18,6 +18,7 @@ const App: React.FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/movies/:movieId" element={<MoviePage />} />
           <Route path="/search" element={<SearchPage />} />
+          {/* catch 404 page */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer />

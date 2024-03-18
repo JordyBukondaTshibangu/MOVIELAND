@@ -8,6 +8,8 @@ body
     background-color: #141414;
   }
 
+
+  /* Blur the Movie Hero */
 .movie-preview-cover::after {
   content: "";
   position: absolute;
