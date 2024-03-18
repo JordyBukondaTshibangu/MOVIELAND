@@ -32,7 +32,7 @@ Below are the links to help you install it:
 
 Launch
 
-* git clone git@github.com:JordyBukondaTshibangu/MovieLand.git
+* git clone (git@github.com:JordyBukondaTshibangu/MovieLand.git)
 * cd MovieLand
 * npm install 
 * npm run start
