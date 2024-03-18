@@ -16,8 +16,6 @@ export const fetchRandomMovies = async (quantity: number): Promise<IMovie[]> => 
         const movieList: any[] = Array.isArray(data) ? data : data.description;
         const updatedMovieList: IMovie[] = movieList.map(item => convertToObject(item));
 
-        console.log(updatedMovieList)
-
         return updatedMovieList.length > 0 ? updatedMovieList : [];
     }
     else {

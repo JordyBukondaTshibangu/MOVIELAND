@@ -10,7 +10,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
 }) => {
   const [showMoviePreview, setShowMoviePreview] = useState<boolean>(false);
   return (
-    <div className="h-96 relative cursor-pointer z-40">
+    <div className="h-[450px] relative cursor-pointer z-40">
       <div className="absolute top-0 left-0 bottom-0 right-0">
         <img
           src={IMG_POSTER}
@@ -38,7 +38,9 @@ const MovieCard: React.FC<MovieCardProps> = ({
               <i className="fa fa-star text-lg text-rating"></i>
             </span>
           </div>
-          <Button link={`/movies/${IMDB_ID}`} text="View detail" icon="eye" />
+          <div className="flex-1 mt-auto flex items-end pb-8">
+            <Button link={`/movies/${IMDB_ID}`} text="View detail" icon="eye" />
+          </div>
         </div>
       )}
     </div>
