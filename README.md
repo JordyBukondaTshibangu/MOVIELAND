@@ -42,7 +42,7 @@ Launch
 APP STRUCTURE AND KEY POINTS
 
 
-- [x] SDK ==> (Interface server) -- src/SDK
+- [x] SDK ==> (Interface server) -- src/SDK  (Check the instruction.md to read more about the SDK)
 - [x] APP ==> (frontend interface and Routing) -- src/app
 	
 
