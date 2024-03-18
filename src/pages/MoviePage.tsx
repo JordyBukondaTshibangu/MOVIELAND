@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "../store/hooks";
-import { RootState } from "../store/store"; // Adjust this import based on your file structure
-import { fetchMovie } from "../store/slices/movie/movieSlice"; // Adjust this import too
-import MovieDetail from "../components/container/MovieDetails"; // Adjust this import based on your file structure
-import MovieListLoader from "../components/feedback/MovieLoader"; // Adjust this import as necessary
+import { RootState } from "../store/store";
+import { fetchMovie } from "../store/slices/movie/movieSlice";
+import MovieDetail from "../components/container/MovieDetails";
+import MovieListLoader from "../components/feedback/MovieLoader";
 import Error from "../components/feedback/Error";
 
 const MoviePage: React.FC = () => {
-  const { movieId } = useParams<{ movieId: string }>(); // This assumes you're using react-router v5 or above
+  const { movieId } = useParams<{ movieId: string }>();
   const dispatch = useDispatch();
   const {
     item: movie,

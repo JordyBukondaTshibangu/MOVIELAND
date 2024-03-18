@@ -16,6 +16,3 @@ export const selectFilteredMovies = createSelector(
     }
 )
 
-export const selectedMovieById = createSelector(
-    [(state: RootState, movieId: string) => state.movies.items.find((movie) => movie.IMDB_ID === movieId)],
-    (movie) => movie)
